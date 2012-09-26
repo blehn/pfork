@@ -1,0 +1,115 @@
+* {box-sizing: border-box; }
+
+body {
+  font-family: "Helvetica Neue";
+  -webkit-font-smoothing: antialiased;
+  
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 40px;
+  padding: 0 10px;
+}
+
+#albums h2 a {
+  color: #4286CD;
+  text-decoration: underline;
+}
+
+ul li {
+  list-style-type: none;
+  position: relative;
+  float: left;
+  width: 100%;
+  font-size: 24px;
+  border-bottom: 1px solid #eee;
+  padding: 5px 10px;
+}
+
+ul li:hover {
+  background-color: #57DFC2;
+}
+
+.links {
+  position: absolute;
+  right: 0;
+  top: 10px;
+}
+
+ul li .links li {
+  float: right;
+  width: auto;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+ul#albums {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 60%;
+  background-color: #222;
+  height: 100%;
+  overflow-y: auto;
+}
+
+ul#tracks {
+  position: fixed;
+  top: 0;
+  left: 60%;
+  width: 40%;
+  height: 100%;
+  overflow-y: auto;
+}
+
+
+li .cover img {
+  height: 30px;
+  float: left;
+  margin: 5px 5px 0 0;
+}
+
+.track,.album{
+  padding: 5px;
+  font-weight: bold;
+}
+
+.title {
+  font-weight: normal;
+  color: #999;
+}
+
+.score {
+  color: #FF9C15;
+}
+
+a {
+  text-decoration: none;
+  color: #222;
+}
+
+#albums a {
+  color: #eee;
+}
+
+#albums li {
+  border-color: #333;
+}
+
+#albums h2 {
+  color: #fff;
+}
+
+#albums .links a {
+  color: #666;
+}

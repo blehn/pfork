@@ -1,0 +1,8 @@
+artist: #main .info h1 a
+title: #main .info h2
+date: #main .info h4 span.pub-date
+album art: #main .artwork img
+score: #main .info span.score
+best: #main .info div.bnm-label
+
+
