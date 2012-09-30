@@ -1,7 +1,7 @@
 * {box-sizing: border-box; }
 
 body {
-  font-family: "Helvetica Neue";
+  font-family: "Helvetica Neue", Arial;
   -webkit-font-smoothing: antialiased;
   
 }
@@ -11,7 +11,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h2 {
-  font-size: 40px;
+  font-size: 36px;
   padding: 0 10px;
 }
 
@@ -26,27 +26,56 @@ ul li {
   float: left;
   width: 100%;
   font-size: 24px;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #333;
   padding: 5px 10px;
 }
 
 ul li:hover {
-  background-color: #57DFC2;
+  background-color: #f9f9f9;
 }
 
+
 .links {
-  position: absolute;
-  right: 0;
-  top: 10px;
+  float: left;
+  margin: -2px 0 0;
+  display: none;
+}
+
+ul li:hover .links {
+  display: block;
 }
 
 ul li .links li {
   float: right;
-  width: auto;
   border: none;
-  font-size: 16px;
-  font-weight: bold;
+  width: auto;
+  margin: 0;
+  height: 35px;
+  width: 35px;
 }
+
+.links a {
+  margin: 0;
+  height: 35px;
+  width: 35px;
+  overflow: hidden;
+  text-indent: -10000px;
+  color: #fff;
+  opacity: .7;
+}
+
+.links a:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+
+.links .spotify { background: url(/images/spotify.png) 0 0 no-repeat; }
+.links .rdio { background: url(/images/rdio.png) 0 0 no-repeat; }
+.links .itunes { background: url(/images/itunes.png) 0 0 no-repeat; }
+.links .amazon { background: url(/images/amazon.png) 0 0 no-repeat; }
+.links .torrent { background: url(/images/torrent.png) 0 0 no-repeat; }
+.links .play { background: url(/images/play.png) 0 0 no-repeat; }
 
 ul {
   padding: 0;
@@ -54,13 +83,10 @@ ul {
 }
 
 ul#albums {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
-  width: 60%;
-  background-color: #222;
-  height: 100%;
-  overflow-y: auto;
+  width: 100%;
 }
 
 ul#tracks {
@@ -81,12 +107,13 @@ li .cover img {
 
 .track,.album{
   padding: 5px;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .title {
   font-weight: normal;
-  color: #999;
+  color: #777;
+  margin: 0 20px 0 5px;
 }
 
 .score {
@@ -99,17 +126,15 @@ a {
 }
 
 #albums a {
-  color: #eee;
+  float: left;
 }
 
 #albums li {
-  border-color: #333;
+  border-color: #ddd;
 }
 
 #albums h2 {
   color: #fff;
 }
 
-#albums .links a {
-  color: #666;
-}
+

@@ -17,31 +17,10 @@
     %link{ :rel => "stylesheet", :href => "css/stylesheet.css"}
 
   %body
-    %ul#tracks
-      %h2 Tracks
-      = @tracks.each do |track|
-        %li
-          %a{ :href => "http://grooveshark.com/#!/search?q=" + track.css('.artist').text.strip + " " + track.css('.title').text.strip }
-            .cover
-              %img{ :src => track.css('.artwork img').attr('src')}
-            .track
-              %span.artist
-                = track.css('.artist').text.strip
-              %span.title
-                = track.css('.title').text.strip
-          %ul.links     
-            %li
-              %a.play{ :href => "" } PLAY
-            %li
-              %a.magnet{ :href => "" } DL
-            %li
-              %a.buy{ :href => "" } BUY
     %ul#albums
-      %h2 
-        Albums
       = @albums.each do |album|
         %li
-          %a{ :href => "http://grooveshark.com/#!/search?q=" + album.css('.info h1').text.strip + " " + album.css('.info h2').text.strip }
+          %a{ :href => "http://grooveshark.com/#!/search?q=" + album.css('.info h1').text.strip + "+" + album.css('.info h2').text.strip }
             / .cover
             /  %img{ :src => album.css('.artwork img').attr('src')}
             .album
@@ -51,11 +30,17 @@
                 = album.css('.info h2').text.strip
           %ul.links     
             %li
-              %a.play{ :href => "" } PLAY
+              %a.torrent magnet
             %li
-              %a.magnet{ :href => "" } DL
+              %a.spotify spotify
             %li
-              %a.buy{ :href => "" } BUY
+              %a.rdio rdio
+            %li
+              %a.itunes itunes
+            %li
+              %a.amazon amazon
+            %li
+              %a.play play
             / %span.score
             /   = album.css('.info span.score').text.strip
             / .date
