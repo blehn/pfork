@@ -1,18 +1,13 @@
 require 'sinatra'
-require 'mechanize'
 require 'nokogiri'
 require 'open-uri'
 require 'haml'
 
+
 get '/' do
-  tracksURL = "http://pitchfork.com/reviews/best/tracks/"
-  tracksData = Nokogiri::HTML(open(tracksURL))
-  @tracks = tracksData.css('#main .object-list li')
-
-  albumsURL = "http://pitchfork.com/best/high-scoring-albums/"
-  albumsData = Nokogiri::HTML(open(albumsURL))
-  @albums = albumsData.css('.object-grid ul li')
-
+  albumsPath = File.open('pitchfork_albums.html')
+  albumsData = Nokogiri::HTML(albumsPath)
+  @albums = albumsData.css('li')
   haml :index
 end
 
